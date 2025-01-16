@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header,
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+main {
+    padding: 2em;
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Mi Página Web</h1>
+    </header>
+    <main>
+        {{indetificator}}
+
+        <ul> 
+        {% for item in courses %}
+        {% if item == 'curse1' %} 
+            <li>Soy el primero</li>
+        {% else %}
+            <li>{{item}}</li>
+        {% endif %}
+        {% endfor %}
+        </ul>
+
+    </main>
+    <footer>
+        <p>&copy; 2023 Mi Página Web. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
