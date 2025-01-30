@@ -1,0 +1,9 @@
+{% extends "./layouts/base.html" %}
+{% block title %}Mi Página Web{% endblock %}
+{% block content %}
+    <h2>Listado de profesores</h2>
+    <a href="{% url 'createTeacher' %}">Nuevo</a>
+    {% for  item in teachers  %}
+        <li>{{ item.name }} <a href="{% url 'editTeacher' id=item.id %}">Editar</a>  <a href="{% url 'deleteTeacher' id=item.id %}">Borrar</a></li>
+    {% endfor %}
+{% endblock %}

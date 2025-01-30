@@ -1,0 +1,23 @@
+{% extends "./layouts/base.html" %}
+{% block title %}Mi Página Web{% endblock %}
+{% block content %}
+    <h2>Crear un curso</h2>
+    <form action="{% url 'createCourse' %}" method="post">
+        {% csrf_token %}
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="description">Descripción:</label>
+        <textarea name="description" id="description"></textarea>
+        <br>
+        <label for="teacher">Profesor:</label>
+        <select name="teacher" id="teacher">
+            {% for teacher in teachers %}
+                <option value="{{ teacher.id }}">{{ teacher.name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button type="submit">Guardar</button>
+    </form>
+
+{% endblock %}

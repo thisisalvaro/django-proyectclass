@@ -1,0 +1,23 @@
+{% extends "./layouts/base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<form action="{% url 'createCourses' %}" method="post">
+    {% csrf_token %}
+    <label for="name">Nombre del curso:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="description">Descripción:</label>
+    <textarea id="description" name="description" required></textarea>
+    <br>
+    <label for="teacher">Profesor:</label>
+    <select name="teacher" id="teacher">
+        {% for teacher in teachers %}
+            <option value="{{ teacher.id }}">{{ teacher.name }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <button type="submit">Crear curso</button>
+</form>
+{% endblock %}

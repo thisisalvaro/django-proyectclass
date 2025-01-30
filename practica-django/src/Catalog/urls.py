@@ -19,5 +19,8 @@ from django.urls import include, path
 
 urlpatterns = [
   #  path('/',views.index , name='index'),
-   path('<int:id>/',views.index , name='index'),
+   path('',views.index , name='index'),
+   path('courses/create',views.create_course , name='courses'),
+   path('teachers/create',views.create_teacher , name='CreateTeachers'),
+   path('teachers/<int:id>/edit',views.edit_teacher , name='editTeacher'),
 ]

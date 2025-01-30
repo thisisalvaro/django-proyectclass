@@ -1,0 +1,13 @@
+{% extends "./layouts/base.html" %}
+{% block title %}Mi Página Web{% endblock %}
+{% block content %}
+    <h2>¡Bienvenido a Mi Página Web!</h2>
+    {{counter}}
+    <p>Esta es la página principal de mi sitio web.</p>
+    {% if perms.Catalog.view_course %}
+    <a href="{% url 'courses' %}">cursos</a>
+    {% endif %}
+    {% if perms.Catalog.view_teacher %}
+    <a href="{% url 'teachers' %}">teachers</a>
+    {% endif %}
+{% endblock %}

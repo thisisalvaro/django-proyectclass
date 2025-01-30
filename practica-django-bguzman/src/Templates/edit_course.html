@@ -1,0 +1,10 @@
+{% extends "./layouts/base.html" %}
+{% block title %}Mi Página Web{% endblock %}
+{% block content %}
+    <h2>Editar un curso</h2>
+    <form action="{% url 'editCourse' id=course_id %}" method="post">
+        {% csrf_token %}
+        {{course_form}}
+        <button type="submit">Guardar</button>
+    </form>
+{% endblock %}

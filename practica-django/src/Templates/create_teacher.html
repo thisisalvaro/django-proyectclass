@@ -1,0 +1,12 @@
+{% extends "./layouts/base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<form action="{% url 'CreateTeachers' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <br>
+    <button type="submit">Crear curso</button>
+</form>
+{% endblock %}
